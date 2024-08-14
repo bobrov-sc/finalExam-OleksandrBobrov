@@ -1,0 +1,11 @@
+{
+  "name": "Sheridan College",
+  "type": "public",
+  "established": 1967,
+  "students": {
+    "fullTime": 23000,
+    "partTime": 35000
+  },
+  "image": "college.jpg",
+  "location": "Ontario, Canada"
+}

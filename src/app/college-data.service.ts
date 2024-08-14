@@ -10,7 +10,7 @@ import {map, Observable} from "rxjs";
 export class CollegeDataService {
 
   private static images:string = "https://my-course-exams.web.app/images/";
-  private static collegeData: string = "https://my-course-exams.web.app/data/college.json";
+  private static collegeData: string = "http://localhost:4200/data/college.json";
 
   constructor(private http: HttpClient) { }
 

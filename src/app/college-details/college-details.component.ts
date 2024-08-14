@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {College} from "../college";
+import {Subscription} from "rxjs";
+import {CollegeDataService} from "../college-data.service";
 
 @Component({
   selector: 'app-college-details',
@@ -9,4 +12,22 @@ import { Component } from '@angular/core';
 })
 export class CollegeDetailsComponent {
 
+  college:College |undefined;
+
+  private subscription: Subscription | undefined;
+
+  constructor(collegeDataService: CollegeDataService) {
+    this.subscription = collegeDataService.getCollege().subscribe(
+      {
+        next:college => {
+          this.college = college;
+        }
+      }
+    );
+  }
+
+  ngOnDestroy(){
+    this.subscription?.unsubscribe();
+  }
 }
+
