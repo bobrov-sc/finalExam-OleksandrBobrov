@@ -1,0 +1,19 @@
+.picture {
+  height: 250px;
+  width: auto;
+}
+
+img{
+  height: 100%;
+  border-radius: 10px;
+}
+
+.container span {
+  display: block;
+  margin-bottom: 0.7em;
+}
+
+.container h3 {
+  margin-top: 25px;
+  margin-bottom: 0.5em;
+}

@@ -1,17 +1,17 @@
 @if (college !== undefined) {
   <h2>{{college.name}}</h2>
-  <div>
+  <div class="picture">
     <img [src]="college.image" [alt]="college.name">
   </div>
 
-  <div class="details container" >
+  <div class="container" >
     <h3>Details</h3>
     <span>Type: {{college.type}}</span>
     <span>Established: {{college.established}}</span>
     <span>Location: {{college.location}}</span>
   </div>
 
-  <div class="students container">
+  <div class="container">
     <h3>Students</h3>
     <span>Full-time students: {{college.fullTimeStudents}}</span>
     <span>Part-time students: {{college.partTimeStudents}}</span>
