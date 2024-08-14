@@ -17,3 +17,9 @@ img{
   margin-top: 25px;
   margin-bottom: 0.5em;
 }
+
+.status {
+
+  font-weight: bold;
+  font-size: 1.5em;
+}

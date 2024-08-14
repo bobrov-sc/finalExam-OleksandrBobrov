@@ -1,6 +1,6 @@
 @switch (status) {
   @case (LoadingStatus.LOADING) {
-    <p>Loading...</p>
+    <p class="status">Loading...</p>
   }
   @case (LoadingStatus.SUCCESS) {
     @if (college !== undefined) {
@@ -24,6 +24,6 @@
     }
   }
   @case (LoadingStatus.ERROR) {
-    <p>Loading error!</p>
+    <p class="status">Loading error!</p>
   }
 }
