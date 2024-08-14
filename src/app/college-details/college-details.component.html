@@ -1,19 +1,29 @@
-@if (college !== undefined) {
-  <h2>{{college.name}}</h2>
-  <div class="picture">
-    <img [src]="college.image" [alt]="college.name">
-  </div>
+@switch (status) {
+  @case (LoadingStatus.LOADING) {
+    <p>Loading...</p>
+  }
+  @case (LoadingStatus.SUCCESS) {
+    @if (college !== undefined) {
+      <h2>{{college.name}}</h2>
+      <div class="picture">
+        <img [src]="college.image" [alt]="college.name">
+      </div>
 
-  <div class="container" >
-    <h3>Details</h3>
-    <span>Type: {{college.type}}</span>
-    <span>Established: {{college.established}}</span>
-    <span>Location: {{college.location}}</span>
-  </div>
+      <div class="container" >
+        <h3>Details</h3>
+        <span>Type: {{college.type}}</span>
+        <span>Established: {{college.established}}</span>
+        <span>Location: {{college.location}}</span>
+      </div>
 
-  <div class="container">
-    <h3>Students</h3>
-    <span>Full-time students: {{college.fullTimeStudents}}</span>
-    <span>Part-time students: {{college.partTimeStudents}}</span>
-  </div>
+      <div class="container">
+        <h3>Students</h3>
+        <span>Full-time students: {{college.fullTimeStudents}}</span>
+        <span>Part-time students: {{college.partTimeStudents}}</span>
+      </div>
+    }
+  }
+  @case (LoadingStatus.ERROR) {
+    <p>Loading error!</p>
+  }
 }

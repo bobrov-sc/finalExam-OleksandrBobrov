@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {College} from "../college";
 import {Subscription} from "rxjs";
 import {CollegeDataService} from "../college-data.service";
+import {LoadingStatus} from "../loading-status";
 
 @Component({
   selector: 'app-college-details',
@@ -13,6 +14,7 @@ import {CollegeDataService} from "../college-data.service";
 export class CollegeDetailsComponent {
 
   college:College |undefined;
+  status:LoadingStatus = LoadingStatus.LOADING;
 
   private subscription: Subscription | undefined;
 
@@ -21,7 +23,13 @@ export class CollegeDetailsComponent {
       {
         next:college => {
           this.college = college;
+          this.status = LoadingStatus.SUCCESS;
+        },
+
+        error:() => {
+          this.status = LoadingStatus.ERROR;
         }
+
       }
     );
   }
@@ -29,5 +37,7 @@ export class CollegeDetailsComponent {
   ngOnDestroy(){
     this.subscription?.unsubscribe();
   }
+
+  protected readonly LoadingStatus = LoadingStatus;
 }
 
